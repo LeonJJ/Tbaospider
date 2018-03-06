@@ -17,7 +17,7 @@ class TbspiderSpider(scrapy.Spider):
 
     def parse(self, response):
         item = TbaospiderItem()
-        item["title"] = response.css('.row.row-2.title a::text').extract()
+#         item["title"] = response.css('.row.row-2.title a::text').extract()#匹配待改进
         item["price"] = response.css('.price.g_price.g_price-highlight strong::text').extract()
         item["buy_num"] = response.css('.deal-cnt::text').extract()
         yield item
