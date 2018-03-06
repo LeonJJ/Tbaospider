@@ -17,7 +17,7 @@ class TbaospiderPipeline(object):
 
     def process_item(self, item, spider):
         for i in range(len(item["title"])):
-            title =item["title"][i]
+            title =item["title"][i].strip()
             price = item["price"][i]
             buy_num = item["buy_num"][i].replace("人付款","")
             dict = {
